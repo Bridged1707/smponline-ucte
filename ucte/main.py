@@ -1,24 +1,14 @@
 import asyncio
 
-from ucte.collectors.economy_ws import run_economy_ws
-from ucte.collectors.shops import sync_shops
-from ucte.core.config import SHOP_SYNC_INTERVAL
-
-
-async def shop_loop():
-
-    while True:
-
-        await sync_shops()
-
-        await asyncio.sleep(SHOP_SYNC_INTERVAL)
+from ucte.collectors.economy_ws import run as ws_collector
+from ucte.collectors.shop_snapshot import run as shop_collector
 
 
 async def main():
 
     await asyncio.gather(
-        run_economy_ws(),
-        shop_loop()
+        ws_collector(),
+        shop_collector()
     )
 
 

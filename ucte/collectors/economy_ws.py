@@ -2,11 +2,11 @@ import asyncio
 import json
 import websockets
 
-from ucte.core.config import ECONOMY_WS, USER_AGENT, ECONOMY_WS_RECONNECT_DELAY
-from ucte.services.utcon_client import post_transaction
+from ucte.config import ECONOMY_WS, USER_AGENT, WS_RECONNECT_DELAY
+from ucte.clients.utcon import post_transaction
 
 
-async def run_economy_ws():
+async def run():
 
     while True:
 
@@ -33,6 +33,4 @@ async def run_economy_ws():
         except Exception as e:
 
             print(f"[UCTE] Websocket disconnected: {e}")
-            print(f"[UCTE] Reconnecting in {ECONOMY_WS_RECONNECT_DELAY}s")
-
-            await asyncio.sleep(ECONOMY_WS_RECONNECT_DELAY)
+            await asyncio.sleep(WS_RECONNECT_DELAY)
