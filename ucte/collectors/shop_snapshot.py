@@ -3,38 +3,40 @@ import httpx
 
 from ucte.config import SMP_API_BASE, UTCON_URL, SHOP_BATCH_SIZE
 
+
 async def run():
     print("[UCTE] Fetching shop snapshot")
 
     async with httpx.AsyncClient(timeout=120) as client:
-        r = await client.get(f"{SMP_API_BASE}/quickshop/v1/getAllShops")
-        r.raise_for_status()
-
-        shops = r.json()
+        resp = await client.get(f"{SMP_API_BASE}/quickshop/v1/getAllShops")
+        resp.raise_for_status()
+        shops = resp.json()
 
     print(f"[UCTE] Queued {len(shops)} shops")
 
-    await send_to_utcon(shops)
+    await push_shops(shops)
 
 
-async def send_to_utcon(shops):
-
+async def push_shops(shops):
     async with httpx.AsyncClient(timeout=120) as client:
 
-        for i in range(0, len(shops), SHOP_BATCH_SIZE):
+        total = len(shops)
+
+        for i in range(0, total, SHOP_BATCH_SIZE):
+
             batch = shops[i:i + SHOP_BATCH_SIZE]
 
             try:
-                await client.post(
-                f"{UTCON_URL}/v1/raw/shops/record",
-                json={"body": shop}
-            )
+                resp = await client.post(
+                    f"{UTCON_URL}/v1/raw/shops/record",
+                    json={"body": batch}
+                )
 
-                if r.status_code != 200:
-                    print("[UCTE] shop error", r.status_code)
-                    print(r.text)
+                if resp.status_code != 200:
+                    print("[UCTE] shop error", resp.status_code)
+                    print(resp.text)
 
-            except Exception as e:
-                print("[UCTE] shop push failed:", e)
+            except Exception as exc:
+                print("[UCTE] shop push failed:", exc)
 
             await asyncio.sleep(0.05)
