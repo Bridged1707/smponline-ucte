@@ -26,9 +26,9 @@ async def send_to_utcon(shops):
             batch = shops[i:i + SHOP_BATCH_SIZE]
 
             try:
-                r = await client.post(
+                await client.post(
                     f"{UTCON_URL}/v1/raw/shops/record",
-                    json=batch
+                    json={"body": shop}
                 )
 
                 if r.status_code != 200:
