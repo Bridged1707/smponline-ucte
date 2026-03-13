@@ -9,7 +9,7 @@ def normalize_shop(shop):
 
     return {
 
-        "shop_id": int(shop["id"]),
+        "id": int(shop["id"]),
 
         "owner_name": owner.get("name"),
         "owner_uuid": owner.get("uuid"),
