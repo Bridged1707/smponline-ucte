@@ -3,7 +3,6 @@ import httpx
 
 from ucte.config import SMP_API_BASE, UTCON_URL, SHOP_BATCH_SIZE
 
-
 async def run():
     print("[UCTE] Fetching shop snapshot")
 
@@ -27,9 +26,9 @@ async def send_to_utcon(shops):
 
             try:
                 await client.post(
-                    f"{UTCON_URL}/v1/raw/shops/record",
-                    json={"body": shop}
-                )
+                f"{UTCON_URL}/v1/raw/shops/record",
+                json={"body": shop}
+            )
 
                 if r.status_code != 200:
                     print("[UCTE] shop error", r.status_code)
