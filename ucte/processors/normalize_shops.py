@@ -20,7 +20,7 @@ def normalize_shop(shop):
         "z": int(loc.get("z")),
 
         "shop_type": shop.get("type"),
-        "price": int(shop.get("price") or 0),
+        "price": float(shop.get("price") or 0),
         "remaining": int(shop.get("remaining") or 0),
 
         "item_type": item.get("type"),

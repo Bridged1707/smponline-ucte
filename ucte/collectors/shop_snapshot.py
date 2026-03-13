@@ -5,6 +5,7 @@ import sys
 from typing import List
 
 from ucte.config import SMP_API_BASE, UTCON_URL, SHOP_BATCH_SIZE
+from ucte.processors.normalize_shops import normalize_shop
 
 
 async def run():
@@ -15,6 +16,7 @@ async def run():
         resp = await client.get(f"{SMP_API_BASE}/quickshop/v1/getAllShops")
         resp.raise_for_status()
         shops = resp.json()
+        shops = [normalize_shop(shop) for shop in shops]
 
     print(f"[UCTE] Queued {len(shops)} shops")
 
@@ -37,7 +39,7 @@ async def push_all_once(shops: List[dict]) -> bool:
         try:
             resp = await client.post(
                 f"{UTCON_URL}/v1/raw/shops/record",
-                json={"body": shops},
+                json=shops,
                 headers={"Content-Type": "application/json"},
                 timeout=120
             )
@@ -71,7 +73,7 @@ async def push_in_batches(shops: List[dict]):
             try:
                 resp = await client.post(
                     f"{UTCON_URL}/v1/raw/shops/record",
-                    json={"body": batch},
+                    json=batch,
                     headers={"Content-Type": "application/json"},
                     timeout=120
                 )
