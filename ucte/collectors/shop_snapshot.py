@@ -16,7 +16,6 @@ async def run(queue):
             shops = get_all_shops()
 
             for shop in shops:
-
                 await queue.put(normalize_shop(shop))
 
             print(f"[UCTE] Queued {len(shops)} shops")
