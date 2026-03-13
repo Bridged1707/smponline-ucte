@@ -15,7 +15,7 @@ def post_transactions(transactions):
 
 def post_shops(shops):
 
-    url = f"{UTCON_URL}/v1/raw/shop/record"
+    url = f"{UTCON_URL}/v1/raw/shops/record"
 
     r = requests.post(url, json=shops, timeout=120)
 
