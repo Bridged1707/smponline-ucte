@@ -57,5 +57,5 @@ def normalize_shop_transaction(event):
 
         "transaction_type": data["type"],
 
-        "created_at": int(time.time())
+        "created_at": int(time.time() * 1000)
     }
