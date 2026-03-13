@@ -27,7 +27,7 @@ async def send_to_utcon(shops):
 
             try:
                 r = await client.post(
-                    f"{UTCON_URL}/v1/raw/shop/record",
+                    f"{UTCON_URL}/v1/raw/shops/record",
                     json=batch
                 )
 
