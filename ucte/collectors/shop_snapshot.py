@@ -1,11 +1,11 @@
 import asyncio
 
 from ucte.clients.smp_api import get_all_shops
-from ucte.clients.utcon import post_shops
+from ucte.processors.normalize_shops import normalize_shop
 from ucte.config import SHOP_SYNC_INTERVAL
 
 
-async def run():
+async def run(queue):
 
     while True:
 
@@ -15,12 +15,14 @@ async def run():
 
             shops = get_all_shops()
 
-            post_shops(shops)
+            for shop in shops:
 
-            print(f"[UCTE] Synced {len(shops)} shops")
+                await queue.put(normalize_shop(shop))
+
+            print(f"[UCTE] Queued {len(shops)} shops")
 
         except Exception as e:
 
-            print(f"[UCTE] Shop sync failed: {e}")
+            print("[UCTE] Shop sync failed:", e)
 
         await asyncio.sleep(SHOP_SYNC_INTERVAL)

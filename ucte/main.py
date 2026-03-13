@@ -1,14 +1,25 @@
 import asyncio
 
-from ucte.collectors.economy_ws import run as ws_collector
-from ucte.collectors.shop_snapshot import run as shop_collector
+from ucte.collectors.websocket import run as websocket_run
+from ucte.collectors.shop_snapshot import run as shop_snapshot_run
+
+from ucte.workers.transaction_worker import run as transaction_worker
+from ucte.workers.shop_worker import run as shop_worker
 
 
 async def main():
 
+    transaction_queue = asyncio.Queue(maxsize=10000)
+    shop_queue = asyncio.Queue(maxsize=10000)
+
     await asyncio.gather(
-        ws_collector(),
-        shop_collector()
+
+        websocket_run(transaction_queue),
+        shop_snapshot_run(shop_queue),
+
+        transaction_worker(transaction_queue),
+        shop_worker(shop_queue)
+
     )
 
 

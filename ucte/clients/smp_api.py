@@ -1,12 +1,13 @@
 import requests
-from ucte.config import SHOP_API
+from ucte.config import SMP_API_BASE
 
 
 def get_all_shops():
 
-    r = requests.get(SHOP_API, timeout=30)
+    url = f"{SMP_API_BASE}/quickshop/v1/getAllShops"
 
-    if r.status_code != 200:
-        raise Exception("Shop API error")
+    r = requests.get(url, timeout=120)
+
+    r.raise_for_status()
 
     return r.json()
