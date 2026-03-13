@@ -2,7 +2,7 @@ import time
 import requests
 
 from ucte.core.config import SHOP_ENDPOINT
-from ucte.services.utdb_client import send_raw_event
+from ucte.services.utcon_client import post_shops
 
 
 async def sync_shops():
@@ -19,15 +19,9 @@ async def sync_shops():
 
         shops = response.json()
 
-        timestamp = int(time.time() * 1000)
+        post_shops(shops)
 
-        send_raw_event(
-            "shop_snapshot",
-            shops,
-            timestamp
-        )
-
-        print(f"[UCTE] Stored snapshot ({len(shops)} shops)")
+        print(f"[UCTE] Synced {len(shops)} shops")
 
     except Exception as e:
         print(f"[UCTE] Shop sync failed: {e}")

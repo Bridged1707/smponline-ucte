@@ -1,33 +1,9 @@
-import os
-from dotenv import load_dotenv
+ECONOMY_WS = "wss://api.smponline.net/economy/v1/ws"
+ECONOMY_WS_RECONNECT_DELAY = 5
 
-load_dotenv()
+SHOP_ENDPOINT = "https://api.smponline.net/quickshop/v1/getAllShops"
+SHOP_SYNC_INTERVAL = 600
 
-# UTDB API
-UTDB_API_URL = os.getenv("UTDB_API_URL")
+USER_AGENT = "UCTE/1.0 (economy tracker)"
 
-# Shop snapshot API
-SHOP_ENDPOINT = os.getenv(
-    "SHOP_ENDPOINT",
-    "https://smponline-api.callmecarson.live/quickshop/v1/getAllShops"
-)
-
-SHOP_SYNC_INTERVAL = int(
-    os.getenv("SHOP_SYNC_INTERVAL", "120")
-)
-
-# Economy websocket
-ECONOMY_WS = os.getenv(
-    "ECONOMY_WS",
-    "wss://smponline-api.callmecarson.live/economy/v1/ws"
-)
-
-ECONOMY_WS_RECONNECT_DELAY = int(
-    os.getenv("ECONOMY_WS_RECONNECT_DELAY", "5")
-)
-
-# Required by API
-USER_AGENT = os.getenv(
-    "USER_AGENT",
-    "smponline-ucte/1.0"
-)
+UTCON_API_URL = "http://10.1.0.81:8080"

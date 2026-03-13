@@ -3,7 +3,7 @@ import json
 import websockets
 
 from ucte.core.config import ECONOMY_WS, USER_AGENT, ECONOMY_WS_RECONNECT_DELAY
-from ucte.services.utdb_client import send_raw_event
+from ucte.services.utcon_client import post_transaction
 
 
 async def run_economy_ws():
@@ -28,14 +28,7 @@ async def run_economy_ws():
                     if "event" not in data:
                         continue
 
-                    event_type = data["event"]
-                    timestamp = data.get("timestamp")
-
-                    send_raw_event(
-                        event_type,
-                        data,
-                        timestamp
-                    )
+                    post_transaction(data)
 
         except Exception as e:
 
