@@ -3817,3 +3817,16 @@
 [UCTE] raw ws message: {"event":"ping","timestamp":1773615661323,"data":true}
 [UCTE] raw ws message: {"event":"ping","timestamp":1773615676323,"data":true}
 [UCTE] raw ws message: {"event":"ping","timestamp":1773615691323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773615706323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773615721323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773615736323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773615751323,"data":true}
+[UCTE] raw ws message: {"event":"auctionComplete","timestamp":1773615762840,"data":{"item":{"type":"COBBLESTONE_WALL","quantity":1,"name":"Waystone","snbt":"{\"minecraft:custom_model_data\":{strings:[\"smptransport_wsunlocked\"]},\"minecraft:custom_name\":{color:\"light_purple\",italic:0b,text:\"Waystone\"},\"minecraft:lore\":[{color:\"white\",italic:0b,text:\"This item can be placed to create a\"},{color:\"white\",italic:0b,text:\"Waystone. The Waystone will not be usable\"},{color:\"white\",italic:0b,text:\"until you interact with a Waystone already\"},{color:\"white\",italic:0b,text:\"in the Waystone network.\"},{color:\"white\",italic:0b,text:\"\"},{color:\"yellow\",italic:0b,text:\"Place your Waystone on top of Glass to\"},{color:\"yellow\",italic:0b,text:\"let it control a Beacon's beam color!\"}]}"},"amount":1,"finalBid":100.0}}
+[UCTE] queued auction tx: {'event_type': 'auction', 'item_type': 'COBBLESTONE_WALL', 'item_name': 'Waystone', 'snbt': '{"minecraft:custom_model_data":{strings:["smptransport_wsunlocked"]},"minecraft:custom_name":{color:"light_purple",italic:0b,text:"Waystone"},"minecraft:lore":[{color:"white",italic:0b,text:"This item can be placed to create a"},{color:"white",italic:0b,text:"Waystone. The Waystone will not be usable"},{color:"white",italic:0b,text:"until you interact with a Waystone already"},{color:"white",italic:0b,text:"in the Waystone network."},{color:"white",italic:0b,text:""},{color:"yellow",italic:0b,text:"Place your Waystone on top of Glass to"},{color:"yellow",italic:0b,text:"let it control a Beacon\'s beam color!"}]}', 'quantity': 1.0, 'unit_price': 100.0, 'total_price': 100.0, 'currency_amount': 100.0, 'shop_x': None, 'shop_y': None, 'shop_z': None, 'shop_world': None, 'transaction_type': 'auctionComplete', 'created_at': 1773615762840}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773615766323,"data":true}
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773615773521,"data":{"type":"buyFromShop","currencyAmount":1.0,"itemPrice":1.0,"item":{"type":"BLACK_WOOL","quantity":64,"name":"Black Wool","snbt":"{}"},"totalAmount":64,"location":{"x":4327,"y":84,"z":3017,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'BLACK_WOOL', 'item_name': 'Black Wool', 'snbt': '{}', 'quantity': 64, 'unit_price': 0.015625, 'total_price': 1.0, 'currency_amount': 1.0, 'shop_x': 4327, 'shop_y': 84, 'shop_z': 3017, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773615773521}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
