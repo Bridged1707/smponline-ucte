@@ -1,7 +1,7 @@
 # smponline-smpdsbot
 
 # Service
-administrator@prod-ucte-r001:~$ cat /etc/systemd/system/ucte.service
+```administrator@prod-ucte-r001:~$ cat /etc/systemd/system/ucte.service
 [Unit]
 Description=UCTE Market Ingest Service
 After=network-online.target
@@ -18,4 +18,4 @@ Restart=always
 RestartSec=5
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target```
