@@ -1,0 +1,17 @@
+[UCTE] Starting websocket + transaction worker + shop snapshot loop
+[UCTE] Connecting to economy websocket
+[UCTE] Fetching shop snapshot
+[UCTE] Websocket connected
+[UCTE] raw ws message: {"hello-from-eco-v1":1773618131140}
+[UCTE] Queued 4646 shops
+[UCTE] Attempting single bulk upload of shops to UTCON
+[UCTE] Snapshot pushed (single request)
+[UCTE] Next shop snapshot in 3000s
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618136323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618151323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618166323,"data":true}
+[UCTE] raw ws message: {"event":"auctionComplete","timestamp":1773618174146,"data":{"item":{"type":"COOKED_BEEF","quantity":62,"name":"Steak","snbt":"{}"},"amount":315,"finalBid":2.0}}
+[UCTE] queued auction tx: {'event_type': 'auction', 'item_type': 'COOKED_BEEF', 'item_name': 'Steak', 'snbt': '{}', 'quantity': 315.0, 'unit_price': 2.0, 'total_price': 630.0, 'currency_amount': 630.0, 'shop_x': None, 'shop_y': None, 'shop_z': None, 'shop_world': None, 'transaction_type': 'auctionComplete', 'created_at': 1773618174146}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618181323,"data":true}

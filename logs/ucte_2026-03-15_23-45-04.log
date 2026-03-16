@@ -1,0 +1,51 @@
+[UCTE] Starting websocket + transaction worker + shop snapshot loop
+[UCTE] Connecting to economy websocket
+[UCTE] Fetching shop snapshot
+[UCTE] Websocket connected
+[UCTE] raw ws message: {"hello-from-eco-v1":1773618305154}
+[UCTE] Queued 4646 shops
+[UCTE] Attempting single bulk upload of shops to UTCON
+[UCTE] Snapshot pushed (single request)
+[UCTE] Next shop snapshot in 3000s
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618316323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618331323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618346323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618361323,"data":true}
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773618361563,"data":{"type":"buyFromShop","currencyAmount":1.0,"itemPrice":1.0,"item":{"type":"ENCHANTED_BOOK","quantity":1,"name":"Enchanted Book","snbt":"{\"minecraft:stored_enchantments\":{\"minecraft:density\":3,\"minecraft:unbreaking\":3}}"},"totalAmount":1,"location":{"x":-8906,"y":69,"z":9062,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'ENCHANTED_BOOK', 'item_name': 'Enchanted Book', 'snbt': '{"minecraft:stored_enchantments":{"minecraft:density":3,"minecraft:unbreaking":3}}', 'quantity': 1, 'unit_price': 1.0, 'total_price': 1.0, 'currency_amount': 1.0, 'shop_x': -8906, 'shop_y': 69, 'shop_z': 9062, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773618361563}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"auctionComplete","timestamp":1773618369380,"data":{"item":{"type":"BLACK_SHULKER_BOX","quantity":1,"name":"Black Shulker Box","snbt":"{\"minecraft:container\":[{item:{count:24,id:\"minecraft:lapis_lazuli\"},slot:0},{item:{components:{\"minecraft:enchantments\":{\"minecraft:mending\":1}},count:1,id:\"minecraft:diamond_pickaxe\"},slot:1},{item:{components:{\"minecraft:enchantments\":{\"minecraft:unbreaking\":2}},count:1,id:\"minecraft:diamond_axe\"},slot:2},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:15},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:16},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:17},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:18},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:19},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:20},{item:{count:64,id:\"minecraft:lapis_lazuli\"},slot:21}]}","childItems":[{"type":"LAPIS_LAZULI","quantity":24,"name":"Lapis Lazuli","snbt":"{}"},{"type":"DIAMOND_PICKAXE","quantity":1,"name":"Diamond Pickaxe","snbt":"{\"minecraft:enchantments\":{\"minecraft:mending\":1}}"},{"type":"DIAMOND_AXE","quantity":1,"name":"Diamond Axe","snbt":"{\"minecraft:enchantments\":{\"minecraft:unbreaking\":2}}"},null,null,null,null,null,null,null,null,null,null,null,null,{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},{"type":"LAPIS_LAZULI","quantity":64,"name":"Lapis Lazuli","snbt":"{}"},null,null,null,null,null]},"amount":1,"finalBid":4.0}}
+[UCTE] queued auction tx: {'event_type': 'auction', 'item_type': 'BLACK_SHULKER_BOX', 'item_name': 'Black Shulker Box', 'snbt': '{"minecraft:container":[{item:{count:24,id:"minecraft:lapis_lazuli"},slot:0},{item:{components:{"minecraft:enchantments":{"minecraft:mending":1}},count:1,id:"minecraft:diamond_pickaxe"},slot:1},{item:{components:{"minecraft:enchantments":{"minecraft:unbreaking":2}},count:1,id:"minecraft:diamond_axe"},slot:2},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:15},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:16},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:17},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:18},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:19},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:20},{item:{count:64,id:"minecraft:lapis_lazuli"},slot:21}]}', 'quantity': 1.0, 'unit_price': 4.0, 'total_price': 4.0, 'currency_amount': 4.0, 'shop_x': None, 'shop_y': None, 'shop_z': None, 'shop_world': None, 'transaction_type': 'auctionComplete', 'created_at': 1773618369380}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618376323,"data":true}
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773618383864,"data":{"type":"buyFromShop","currencyAmount":13.0,"itemPrice":13.0,"item":{"type":"ENCHANTED_BOOK","quantity":1,"name":"Enchanted Book","snbt":"{\"minecraft:stored_enchantments\":{\"minecraft:mending\":1}}"},"totalAmount":1,"location":{"x":-8906,"y":70,"z":9061,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'ENCHANTED_BOOK', 'item_name': 'Enchanted Book', 'snbt': '{"minecraft:stored_enchantments":{"minecraft:mending":1}}', 'quantity': 1, 'unit_price': 13.0, 'total_price': 13.0, 'currency_amount': 13.0, 'shop_x': -8906, 'shop_y': 70, 'shop_z': 9061, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773618383864}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618391323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618406323,"data":true}
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773618414422,"data":{"type":"buyFromShop","currencyAmount":13.0,"itemPrice":13.0,"item":{"type":"ENCHANTED_BOOK","quantity":1,"name":"Enchanted Book","snbt":"{\"minecraft:repair_cost\":3,\"minecraft:stored_enchantments\":{\"minecraft:bane_of_arthropods\":2,\"minecraft:efficiency\":2,\"minecraft:looting\":1,\"minecraft:loyalty\":1,\"minecraft:thorns\":3}}"},"totalAmount":1,"location":{"x":-8906,"y":69,"z":9059,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'ENCHANTED_BOOK', 'item_name': 'Enchanted Book', 'snbt': '{"minecraft:repair_cost":3,"minecraft:stored_enchantments":{"minecraft:bane_of_arthropods":2,"minecraft:efficiency":2,"minecraft:looting":1,"minecraft:loyalty":1,"minecraft:thorns":3}}', 'quantity': 1, 'unit_price': 13.0, 'total_price': 13.0, 'currency_amount': 13.0, 'shop_x': -8906, 'shop_y': 69, 'shop_z': 9059, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773618414422}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618421323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618436323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618451323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618466323,"data":true}
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773618478866,"data":{"type":"buyFromShop","currencyAmount":7.0,"itemPrice":1.0,"item":{"type":"TOTEM_OF_UNDYING","quantity":2,"name":"Totem of Undying","snbt":"{}"},"totalAmount":14,"location":{"x":9686,"y":78,"z":-9539,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'TOTEM_OF_UNDYING', 'item_name': 'Totem of Undying', 'snbt': '{}', 'quantity': 14, 'unit_price': 0.5, 'total_price': 7.0, 'currency_amount': 7.0, 'shop_x': 9686, 'shop_y': 78, 'shop_z': -9539, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773618478866}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618481323,"data":true}
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"shopTransaction","timestamp":1773618486965,"data":{"type":"buyFromShop","currencyAmount":6.0,"itemPrice":1.0,"item":{"type":"EMERALD","quantity":9,"name":"Emerald","snbt":"{}"},"totalAmount":54,"location":{"x":-1604,"y":16,"z":-6404,"world":"world"}}}
+[UCTE] queued shop tx: {'event_type': 'shop', 'item_type': 'EMERALD', 'item_name': 'Emerald', 'snbt': '{}', 'quantity': 54, 'unit_price': 0.1111111111111111, 'total_price': 6.0, 'currency_amount': 6.0, 'shop_x': -1604, 'shop_y': 16, 'shop_z': -6404, 'shop_world': 'world', 'transaction_type': 'buyFromShop', 'created_at': 1773618486965}
+[UCTE] transaction queued for batch, size now 1
+[UCTE] flushing partial transaction batch of 1
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618496323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618511323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618526323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618541323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618556323,"data":true}
+[UCTE] raw ws message: {"event":"ping","timestamp":1773618571323,"data":true}
