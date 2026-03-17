@@ -8,6 +8,8 @@ sudo systemctl status smponline-ucte.service
 
 sudo puppet agent -t --server puppet
 
+TEST
+
 # Service
 ```
 administrator@prod-ucte-r001:~$ cat /etc/systemd/system/ucte.service
