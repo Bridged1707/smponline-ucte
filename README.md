@@ -2,6 +2,12 @@
 
 sudo puppet agent -t --server puppet
 
+sudo systemctl status github-runner
+
+sudo systemctl status smponline-ucte.service
+
+sudo puppet agent -t --server puppet
+
 # Service
 ```
 administrator@prod-ucte-r001:~$ cat /etc/systemd/system/ucte.service
