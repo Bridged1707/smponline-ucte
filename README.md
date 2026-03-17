@@ -10,6 +10,8 @@ sudo puppet agent -t --server puppet
 
 TEST
 
+test2
+
 # Service
 ```
 administrator@prod-ucte-r001:~$ cat /etc/systemd/system/ucte.service
