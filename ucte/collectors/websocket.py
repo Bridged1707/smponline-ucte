@@ -1,6 +1,7 @@
 import asyncio
 import json
 import websockets
+import os
 
 from ucte.config import SMP_WS_URL
 from ucte.processors.normalize_transactions import (
