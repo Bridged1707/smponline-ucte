@@ -1,4 +1,6 @@
-UTCON_URL = "http://10.1.0.81:8080"
+import os
+
+UTCON_URL = os.getenv("UTCON_URL", "http://10.1.0.102:8080")
 
 SMP_API_BASE = "https://smponline-api.callmecarson.live"
 SMP_WS_URL = "wss://smponline-api.callmecarson.live/economy/v1/ws"
