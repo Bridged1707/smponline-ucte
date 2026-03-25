@@ -22,4 +22,5 @@ def normalize_shop(shop):
         "item_quantity": int(item.get("quantity") or 1),
         "snbt": item.get("snbt") or "{}",
         "last_seen": int(time.time() * 1000),
+        "is_enabled": True,
     }

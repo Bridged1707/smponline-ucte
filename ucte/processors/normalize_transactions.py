@@ -32,6 +32,7 @@ def normalize_auction(event):
         "shop_world": None,
         "transaction_type": "auctionComplete",
         "created_at": event_ts_ms,
+        "is_enabled": True,
     }
 
 
@@ -56,4 +57,5 @@ def normalize_shop_transaction(event):
         "shop_world": loc["world"],
         "transaction_type": data["type"],
         "created_at": event_ts_ms,
+        "is_enabled": True,
     }
